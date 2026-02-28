@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --sun-gold: 50 100% 50%;
+    --warm-gold: 46 100% 50%;
+    --amber-fire: 33 100% 50%;
+    --deep-orange: 22 100% 50%;
+    --royal-brown: 20 40% 18%;
+    --deep-maroon: 15 50% 22%;
+    --sandstone: 35 30% 88%;
+    --parchment: 40 50% 95%;
+    --warm-cream: 38 60% 92%;
+    --ink-dark: 20 35% 10%;
+    --muted-earth: 28 20% 45%;
+    --temple-blue: 210 30% 22%;
+    --peacock-teal: 175 50% 28%;
+
+    --background: 40 50% 95%;
+    --foreground: 20 35% 10%;
+    --card: 35 30% 88%;
+    --card-foreground: 20 35% 10%;
+    --popover: 40 50% 95%;
+    --popover-foreground: 20 35% 10%;
+    --primary: 22 100% 50%;
+    --primary-foreground: 40 50% 95%;
+    --secondary: 210 30% 22%;
+    --secondary-foreground: 40 50% 95%;
+    --muted: 35 30% 88%;
+    --muted-foreground: 28 20% 45%;
+    --accent: 50 100% 50%;
+    --accent-foreground: 20 35% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 46 100% 50%;
+    --input: 35 30% 88%;
+    --ring: 50 100% 50%;
+    --radius: 0px;
+
+    --sidebar-background: 40 50% 95%;
+    --sidebar-foreground: 20 35% 10%;
+    --sidebar-primary: 22 100% 50%;
+    --sidebar-primary-foreground: 40 50% 95%;
+    --sidebar-accent: 50 100% 50%;
+    --sidebar-accent-foreground: 20 35% 10%;
+    --sidebar-border: 46 100% 50%;
+    --sidebar-ring: 50 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Cinzel', serif;
+  }
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary {
+    @apply uppercase tracking-[2px] font-semibold px-6 py-3 transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--deep-orange)), hsl(var(--amber-fire)));
+    color: hsl(var(--parchment));
+    border: 1px solid hsl(var(--warm-gold) / 0.5);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, hsl(22 100% 42%), hsl(33 100% 42%));
+    box-shadow: 0 4px 20px hsl(var(--deep-orange) / 0.3);
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    @apply bg-transparent uppercase tracking-[2px] font-semibold border px-6 py-3 transition-all duration-300;
+    color: hsl(var(--sun-gold));
+    border-color: hsl(var(--sun-gold));
+  }
+  .btn-secondary:hover {
+    background: hsl(var(--sun-gold) / 0.12);
+    box-shadow: 0 0 20px hsl(var(--sun-gold) / 0.15);
+  }
+  .gold-divider {
+    @apply w-24 h-[2px] mx-auto;
+    background: linear-gradient(90deg, transparent, hsl(var(--sun-gold)), hsl(var(--amber-fire)), transparent);
+  }
+  .gold-border-top {
+    border-top: 2px solid hsl(var(--warm-gold));
+  }
+  .section-spacing {
+    @apply py-24 px-4;
+  }
+  .container-heritage {
+    @apply max-w-[1200px] mx-auto;
+  }
+  .text-heritage-heading {
+    color: hsl(var(--royal-brown));
+  }
+  .bg-ink {
+    background: hsl(var(--ink-dark));
+  }
+  .bg-royal {
+    background: linear-gradient(135deg, hsl(var(--royal-brown)), hsl(var(--deep-maroon)));
+  }
+  .bg-parchment {
+    background: hsl(var(--parchment));
+  }
+  .bg-sandstone {
+    background: hsl(var(--sandstone));
+  }
+  .text-gold {
+    color: hsl(var(--sun-gold));
+  }
+  .text-antique {
+    color: hsl(var(--warm-gold));
+  }
+  .border-gold {
+    border-color: hsl(var(--warm-gold) / 0.4);
+  }
+  .bg-temple {
+    background: hsl(var(--temple-blue));
+  }
+  .bg-teal {
+    background: hsl(var(--peacock-teal));
+  }
+  .text-parchment {
+    color: hsl(var(--parchment));
+  }
+  .text-maroon {
+    color: hsl(var(--deep-maroon));
+  }
+  .seal-badge {
+    @apply inline-flex items-center px-3 py-1 text-xs uppercase tracking-[2px] font-semibold border;
+    color: hsl(var(--amber-fire));
+    border-color: hsl(var(--amber-fire) / 0.4);
+    background: hsl(var(--amber-fire) / 0.08);
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
